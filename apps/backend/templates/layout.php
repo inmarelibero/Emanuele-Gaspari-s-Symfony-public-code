@@ -32,7 +32,7 @@
 	</div>
 	  
   	<div id="main">  
-    	<?php echo $sf_content ?>
-		</div>
+		<?php echo $sf_content ?>
+	</div>
   </body>
 </html>
