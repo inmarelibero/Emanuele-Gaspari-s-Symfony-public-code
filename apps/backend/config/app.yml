@@ -1,0 +1,8 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  .sf_guard_plugin_success_signin_url:
+    sf_guard_plugin_success_signin_url: '@homepage'
+    sf_guard_plugin_success_signout_url: '@homepage'
