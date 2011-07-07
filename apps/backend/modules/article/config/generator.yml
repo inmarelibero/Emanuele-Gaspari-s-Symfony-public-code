@@ -1,0 +1,38 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Article
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          article
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        photo_filename: { label: Photo, help: 'You can select a picture from your hard disk to be added to the article.' }
+        published: { help: Published }
+        title:	{ help: 'The field "title" will be showed in the "Offers and Promotions" page.'}
+        description:	{ label: Description, help: 'The field "Description" will complete the description of an article.' }
+        
+      list:
+        display:  [_photo, _title, offer, promotion]
+        batch_actions: []
+      
+      
+      filter:
+        display: [title]
+      
+      form:
+        display:
+          "Info": [title, description, foto_filename]
+      
+      edit:
+        title: Edit article "%%title%%"
+      
+      new:
+        title: Create new article
