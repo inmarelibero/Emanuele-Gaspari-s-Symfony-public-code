@@ -18,8 +18,8 @@ class ArticleTable extends Doctrine_Table
     }
     
     /**
-     * getOffers($max)
      * return the offers in the database, optionally limited by $max
+     * 
      * @param unknown_type $max max number of items retrieved
      */
 		public static function getOffers($max = null)
@@ -33,8 +33,8 @@ class ArticleTable extends Doctrine_Table
     }
     
     /**
-     * getPromotions($max)
      * return the promotions in the database, optionally limited by $max
+     * 
      * @param unknown_type $max max number of items retrieved
      */
 		public static function getPromotions($max = null)
