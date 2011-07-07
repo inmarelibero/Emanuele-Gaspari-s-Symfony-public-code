@@ -14,7 +14,6 @@ require_once dirname(__FILE__).'/../lib/articleGeneratorHelper.class.php';
 class articleActions extends autoArticleActions
 {
 	/**
-	 * executeIndex(sfWebRequest $request)
 	 * index action
 	 * 
 	 * @param sfWebRequest $request
@@ -26,7 +25,6 @@ class articleActions extends autoArticleActions
   }
   
   /**
-   * executeUpdate(sfWebRequest $request)
    * updates an article object
    * 
    * @param sfWebRequest $request
@@ -35,10 +33,10 @@ class articleActions extends autoArticleActions
   {
     $this->article = $this->getRoute()->getObject();
     $this->forward404Unless($this->article);
-    $this->form = $this->configuration->getForm($this->article);
-
     
+    $this->form = $this->configuration->getForm($this->article);
     $this->form->bind($request->getParameter($this->form->getName()), $request->getFiles($this->form->getName()));
+    
     if (!$this->form->isValid())
     {
     	$this->setTemplate('edit');
@@ -50,8 +48,8 @@ class articleActions extends autoArticleActions
   }
   
   /**
-   * executeEdit(sfWebRequest $request)
    * custom edit action
+   * 
    * if an article has already setted a cropped image, go to the edit info form
    * otherwise first create the cropped image
    * 
@@ -73,7 +71,6 @@ class articleActions extends autoArticleActions
   }
   
   /**
-   * executeNew(sfWebRequest $request)
    * sets a default form field switching between two tipes of different articles
    * 
    * @param sfWebRequest $request
@@ -95,7 +92,6 @@ class articleActions extends autoArticleActions
   }
   
   /**
-   * executeCrop()
    * action to create a cropped image of an article
    */
 	public function executeCrop()
@@ -105,7 +101,6 @@ class articleActions extends autoArticleActions
   }
   
   /**
-   * executeSaveCrop(sfWebRequest $request)
    * saves the cropped image
    * 
    * @param sfWebRequest $request
@@ -127,31 +122,29 @@ class articleActions extends autoArticleActions
 			$jpeg_quality = 100;
 
 			// destionation file
-			$src = sfConfig::get('sf_upload_dir').'/'.$article->getFotoFilename();
-			$img_r = imagecreatefromjpeg($src);
-			$dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
+			$src		= sfConfig::get('sf_upload_dir').'/'.$article->getFotoFilename();
+			$img_r	= imagecreatefromjpeg($src);
+			$dst_r	= ImageCreateTrueColor( $targ_w, $targ_h );
 			
-			imagecopyresampled($dst_r,$img_r,0,0,$x,$y,
-			$targ_w,$targ_h,$targ_w,$targ_h);
+			imagecopyresampled($dst_r,$img_r, 0, 0, $x, $y, $targ_w, $targ_h, $targ_w, $targ_h);
 	
 			$new_filename = sfConfig::get('sf_upload_dir').'/crop_'.$article->getFotoFilename();
 		
-		// display a message
-		if (imagejpeg($dst_r,$new_filename,$jpeg_quality))
-		{
-			$this->getUser()->setFlash('notice', 'Cropper image correctly saved');
-		}
-		else
-		{
-			$this->getUser()->setFlash('notice', 'Error while saving cropped image');
-		}
+		// display a flash message
+			if (imagejpeg($dst_r,$new_filename,$jpeg_quality))
+			{
+				$this->getUser()->setFlash('notice', 'Cropper image correctly saved');
+			}
+			else
+			{
+				$this->getUser()->setFlash('notice', 'Error while saving cropped image');
+			}
 
 		$this->redirect('article/index');
   	
   }
   
   /**
-   * executeSaveOrderAndType(sfWebRequest $request)
    * interface to display a maximum number of articles, ordering them through jQueryUI and saving via ajax
    * 
    * @param sfWebRequest $request
@@ -185,8 +178,6 @@ class articleActions extends autoArticleActions
 	  		$item->save();
   		}
   	}
-  	
-  	exit;
   }
   
 }

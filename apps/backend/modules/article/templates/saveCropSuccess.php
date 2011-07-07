@@ -2,8 +2,9 @@
 	<div class="notice">
 		<?php echo $sf_user->getFlash('notice')?>
 	</div>
+	
+	<br><br>
 <?php endif;?>
 
-<br><br>
 
 <?php echo link_to('Go back to articles list', 'articles/index')?>

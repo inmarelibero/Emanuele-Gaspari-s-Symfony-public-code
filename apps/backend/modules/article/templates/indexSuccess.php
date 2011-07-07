@@ -80,7 +80,7 @@
 		
 	}
 
-	//]]>
+//]]>
 </script>
 
 
@@ -95,7 +95,7 @@
 <div id="list_articles">
 
 	<div class="title">
-		Offers:
+		<?php echo __('Offers')?>:
 	</div>
 	
 	<div class="list">
@@ -110,7 +110,7 @@
 
 
 	<div class="title">
-		Promotions:
+		<?php echo __('Promotions')?>:
 	</div>
 	
 	<div class="list">

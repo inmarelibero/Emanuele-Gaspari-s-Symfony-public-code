@@ -17,7 +17,7 @@
 				</div>
 			<?php else: ?>
 				<div id="exit">
-					logged as: <?php echo $sf_user->getUsername()?>
+					<?php echo __('logged as')?>: <?php echo $sf_user->getUsername()?>
 					(<?php echo link_to('logout', '@sf_guard_signout'); ?>)
 					<br><br><br>
 				</div>
@@ -25,14 +25,15 @@
 	  
 			<?php if ($sf_user->isAuthenticated()): ?>
 			  <div>
-				  <?php echo link_to('Utenti', '@users'); ?> | 
-				  <?php echo link_to('Categories', '@categories'); ?>
+				  <?php echo link_to(__('Users'), '@users'); ?> | 
+				  <?php echo link_to(__('Categories'), '@categories'); ?>
 			  </div>
 		  <?php endif;?>
 	</div>
 	  
-  	<div id="main">  
+  <div id="main">  
 		<?php echo $sf_content ?>
 	</div>
+	
   </body>
 </html>

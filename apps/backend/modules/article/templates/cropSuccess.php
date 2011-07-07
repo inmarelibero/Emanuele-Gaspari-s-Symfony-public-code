@@ -1,4 +1,6 @@
 <script language="Javascript">
+//<![CDATA[
+           
 	$(document).ready(function() {
 
 		// initializes the cropbox
@@ -13,12 +15,13 @@
 		});
 
 		// divs to same height
-		$("#cropbox_wrapper, #cropbox_azioni").equalHeights(200).css('overflow', 'hidden');
+		$("#cropbox_wrapper, #cropbox_actions").equalHeights(200).css('overflow', 'hidden');
 	});
 
 	/**
-	 *	setCoords(c)
 	 *	sets size and coordinates when moving the crop
+	 *
+	 *	@param c dictionary of coordinates and size
 	 */
 	function setCoords(c)
 	{
@@ -29,13 +32,14 @@
 		jQuery('#w').val(c.w);
 		jQuery('#h').val(c.h);
 	};
-    
+	
+//]]>
 </script>
 
 
 
 
-<h1>Edit crop image</h1>
+<h1><?php echo__('Edit crop image')?></h1>
 
 <form name="form_crop" method="post" action="<?php echo url_for('article/saveCrop')?>">
 
@@ -48,9 +52,7 @@
 			</div>
 		<?php endif?>
 		
-		
 		<input type="hidden" name="id" value="<?php echo $article->getId()?>">
-	
 		
 		<input type="hidden" size="4" id="x" name="x" />
 		<input type="hidden" size="4" id="y" name="y" />
@@ -69,7 +71,7 @@
 		
 		<?php if (file_exists(sfConfig::get('sf_upload_dir').'/'.$artile->getPhotoFilenameCrop())):?>
 			<div class="cropbox_croppedimage">
-				Current cropped image:
+				<?php echo__('Current cropped image')?>:
 				<?php echo image_tag('../uploads/'.$article->getFotoFilenameCrop())?>
 			</div>
 		<?php endif;?>

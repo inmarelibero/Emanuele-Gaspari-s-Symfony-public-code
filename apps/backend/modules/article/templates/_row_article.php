@@ -5,7 +5,7 @@
 	</div>
 
 	<div class="title">
-		<?php echo $article->getTitoloTruncate(40)?>
+		<?php echo $article->getTitleTruncate(40)?>
 	</div>
 
 	<div class="actions">
@@ -22,6 +22,6 @@
 		</ul>
 	</div>
 	
-	<input type="hidden" name="articole[<?php echo $article->getId()?>][id]" value="<?php echo $article->getId()?>">
+	<input type="hidden" name="article[<?php echo $article->getId()?>][id]" value="<?php echo $article->getId()?>">
 
 </li>

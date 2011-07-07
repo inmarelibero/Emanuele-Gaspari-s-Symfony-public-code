@@ -1,7 +1,7 @@
 <?php
 
 /**
- * articole module configuration.
+ * article module configuration.
  *
  * @package    
  * @subpackage article
