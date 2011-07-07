@@ -21,7 +21,7 @@ class articleActions extends autoArticleActions
 	 */
   public function executeIndex(sfWebRequest $request)
   {
-  	$this->arr_offers		= ArticleTable::getOffers();
+  	$this->arr_offers			= ArticleTable::getOffers();
   	$this->arr_promotions	= ArticleTable::getPromotions();
   }
   

@@ -17,7 +17,11 @@ class myUser extends sfGuardSecurityUser
 		
 		$this->signOutIfIsNotAdmin();
 	}
-	
+	/**
+	 * signOutIfIsNotAdmin()
+	 * 
+	 * signs out a user if it has not an admin
+	 */
 	public function signOutIfIsNotAdmin()
 	{
 		if(!$this->hasCredential('admin') || !$this->isSuperAdmin())
