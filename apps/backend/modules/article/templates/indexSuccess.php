@@ -37,7 +37,7 @@
 		});
 
 		// enables/disables the sortables behaviour when the maximun number of articles is reached
-		toggleEnable(<?php echo sfConfig::get('app_offerte_promozioni_numero_massimo')?>);
+		toggleEnable(<?php echo sfConfig::get('app_offers_promotions_max_number')?>);
 		
 		activate_links_add();
 	});
@@ -47,12 +47,14 @@
 	 */
 	function activate_links_add()
 	{
-		$('.aggiungi_offerta').click(function() {
-			window.location ='<?php echo url_for('article/new?tipo=offerta', true)?>';
+		$('.add_offer').click(function()
+		{
+			window.location ='<?php echo url_for('article/new?tipo=offer', true)?>';
 		});
 
-		$('.aggiungi_promozione').click(function() {
-			window.location ='<?php echo url_for('article/new?tipo=promozione', true)?>';
+		$('.add_promotion').click(function()
+		{
+			window.location ='<?php echo url_for('article/new?tipo=promotion', true)?>';
 		});
 	}
 	
@@ -62,7 +64,7 @@
 	 */
 	function updateLists()
 	{
-		toggleEnable(<?php echo sfConfig::get('app_offerte_promozioni_numero_massimo')?>);
+		toggleEnable(<?php echo sfConfig::get('app_offers_promotions_max_number')?>);
 		
 		var data_offers			=  $('#form_offers').serializeArray();
 		var data_promotions	=  $('#form_promotions').serializeArray();

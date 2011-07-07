@@ -6,3 +6,6 @@ all:
   .sf_guard_plugin_success_signin_url:
     sf_guard_plugin_success_signin_url: '@homepage'
     sf_guard_plugin_success_signout_url: '@homepage'
+    
+  offers_promotions:
+    max_number: 3
