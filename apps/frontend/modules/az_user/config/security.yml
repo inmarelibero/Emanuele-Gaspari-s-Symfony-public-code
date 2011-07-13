@@ -1,0 +1,10 @@
+formRegister:
+  is_secure: false
+facebookLogin:
+  is_secure: false
+verifyRegistration:
+  is_secure: false
+resetPassword:
+  is_secure: false
+default:
+  is_secure: true
