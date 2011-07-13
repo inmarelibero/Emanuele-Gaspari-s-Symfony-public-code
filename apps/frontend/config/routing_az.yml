@@ -1,0 +1,86 @@
+##########################################################
+# slugify
+##########################################################
+gallery_show:
+  url:     /galleria/:id/:titolo_slug
+  class:   sfDoctrineRoute
+  options: { model: Gallery, type: object }
+  param:   { module: gallery, action: photos }
+  requirements:
+    id: \d+
+
+add_photos_to_gallery:
+  url:     /user/addPhotosToGallery/:id
+  class:   sfDoctrineRoute
+  options: { model: Gallery, type: object }
+  param:   { module: user, action: addPhotosToGallery }
+  requirements:
+    id: \d+
+
+
+##########################################################
+#sfGuard routes
+##########################################################
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+
+
+##########################################################
+#user
+##########################################################
+edit_profile:
+  url:   /edit-profile
+  param: { module: user, action: editProfile }
+  
+user:
+  url:   /user/:action
+  param: { module: user } 
+
+user_galleries:
+  url:   /galleries
+  param: { module: user, action: galleries }
+  
+user_new_gallery:
+  url:   /gallery/create-new-gallery
+  param: { module: user, action: newGallery }
+
+user_delete_gallery:
+  url:   /gallery/delete/:id/:title
+  param: { module: user, action: deleteGallery }
+  
+user_edit_gallery:
+  url:   /gallery/edit/:id/:title
+  param: { module: user, action: editGallery }
+  
+user_manage_tags:
+  url:   /user/edit-tags/:gallery_id
+  param: { module: user, action: manageTags }
+  
+user_manage_photos:
+  url:   /user/edit-photo/:gallery_id
+  param: { module: user, action: managePhotos }
+
+
+##########################################################
+# default rules
+##########################################################
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+
+##########################################################
+# generic rule
+##########################################################
+default:
+  url:   /:module/:action/*
