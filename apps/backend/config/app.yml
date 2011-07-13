@@ -5,3 +5,21 @@ all:
     
   offers_promotions:
     max_number: 3
+    
+  .emails:
+    provider_email: provider@gmail.com
+    
+  .photos:
+    photos_folder: photos
+  .thumbnails:
+    thumbnails_folder: thumbnails
+    thumbnails_prefix: "thumb_"
+    thumbnails_width: 100
+    thumbnails_height: 100
+  .users:
+    users_folder: users
+    
+  .facebook:
+    facebook_api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    facebook_api_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    facebook_api_id: xxxxxxxxxxxxxxx
