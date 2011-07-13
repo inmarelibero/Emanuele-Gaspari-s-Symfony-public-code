@@ -122,5 +122,5 @@
 			<?php echo image_tag('ajax-loader.gif')?>
 		</div>
 		
-  </body>
+	</body>
 </html>
