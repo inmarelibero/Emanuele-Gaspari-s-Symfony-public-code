@@ -44,13 +44,13 @@ class sfGuardUser extends PluginsfGuardUser
 			unlink($filename_avatar_thumbnail);
 		
 		// delete photo
-		$filename_foto = sfConfig::get('sf_upload_dir').'/'.sfConfig::get('app_users_folder').'/'.$this->Profile->getFoto();
-		if (file_exists($filename_foto))
-			unlink($filename_foto);
+		$filename_photo = sfConfig::get('sf_upload_dir').'/'.sfConfig::get('app_users_folder').'/'.$this->Profile->getPhoto();
+		if (file_exists($filename_photo))
+			unlink($filename_photo);
 		// delete photo thumbnail
-		$filename_foto_thumbnail = sfConfig::get('sf_upload_dir').'/'.sfConfig::get('app_thumbnails_folder').'/'.sfConfig::get('app_thumbnails_prefix').$this->Profile->getFoto();
-		if (file_exists($filename_foto_thumbnail))
-			unlink($filename_foto_thumbnail);
+		$filename_photo_thumbnail = sfConfig::get('sf_upload_dir').'/'.sfConfig::get('app_thumbnails_folder').'/'.sfConfig::get('app_thumbnails_prefix').$this->Profile->getPhoto();
+		if (file_exists($filename_photo_thumbnail))
+			unlink($filename_photo_thumbnail);
 		
 		// delete the profile
 			$profile = $this->Profile;

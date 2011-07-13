@@ -24,9 +24,9 @@ class Article extends BaseArticle
 	/**
 	 * returns the relative filename of the cropped image
 	 */
-	public function getFotoFilenameCrop()
+	public function getPhotoFilenameCrop()
 	{
-		return 'crop_'.$this->getFotoFilename();
+		return 'crop_'.$this->getPhotoFilename();
 	}
 	
 	/**
@@ -34,7 +34,7 @@ class Article extends BaseArticle
 	 */
 	public function hasFileCrop()
 	{
-		if (file_exists(sfConfig::get('sf_upload_dir').'/'.$this->getFotoFilenameCrop()))
+		if (file_exists(sfConfig::get('sf_upload_dir').'/'.$this->getPhotoFilenameCrop()))
 			return true;
 		
 		return false;
@@ -45,10 +45,10 @@ class Article extends BaseArticle
 	 */
 	public function hasCrop()
 	{
-		if ($this->getFotoFilename() == '' || $this->isNew())
+		if ($this->getPhotoFilename() == '' || $this->isNew())
 			return false;
 		
-		if (file_exists(sfConfig::get('sf_upload_dir').'/'.$this->getFotoFilenameCrop()))
+		if (file_exists(sfConfig::get('sf_upload_dir').'/'.$this->getPhotoFilenameCrop()))
 			return true;
 		
 		return false;
@@ -59,7 +59,7 @@ class Article extends BaseArticle
 	 */
 	public function getImageTagCrop()
 	{
-		echo image_tag('../uploads/'.$this->getFotoFilenameCrop());
+		echo image_tag('../uploads/'.$this->getPhotoFilenameCrop());
 	}
 	
 	/**
@@ -109,11 +109,11 @@ class Article extends BaseArticle
 	{
 		// deletes the image
 		if ($this->hasFileCrop())
-			unlink($this->getFotoFilenameCrop());
+			unlink($this->getPhotoFilenameCrop());
 		
 		// deletes the cropped image
-		if (file_exists(sfConfig::get('sf_upload_dir').'/'.$this->getFotoFilename()))
-			unlink($this->getFotoFilename());
+		if (file_exists(sfConfig::get('sf_upload_dir').'/'.$this->getPhotoFilename()))
+			unlink($this->getPhotoFilename());
 		
 		// calls parent to delete object
 		parent::delete($conn);
