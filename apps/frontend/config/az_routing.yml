@@ -2,7 +2,7 @@
 # slugify
 ##########################################################
 gallery_show:
-  url:     /galleria/:id/:titolo_slug
+  url:     /galleria/:id/:title_slug
   class:   sfDoctrineRoute
   options: { model: Gallery, type: object }
   param:   { module: gallery, action: photos }

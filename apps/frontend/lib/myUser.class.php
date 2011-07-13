@@ -96,7 +96,7 @@ class myUser extends sfGuardSecurityUser
 									$message = Swift_Message::newInstance()
 									  ->setFrom(sfConfig::get('app_provider_email'))
 									  ->setTo($sf_guard_user->getEmailAddress())
-									  ->setSubject('Registrazione')
+									  ->setSubject('Registration')
 									  ->setBody($body);
 									
 									$type = $message->getHeaders()->get('Content-Type');

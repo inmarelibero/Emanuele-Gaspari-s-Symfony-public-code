@@ -30,7 +30,7 @@
 	</div>
 </div>
 
-<?php if ($gallery->getDescrizione() != ''):?>
+<?php if ($gallery->getDescription() != ''):?>
 	<div class="gallery_description">
 		<div>
 			<?php echo __('Description')?>:
@@ -69,7 +69,7 @@
 <?php endif;?>
 
 <div class="photos_list">
-	<?php foreach($gallery->getPhotoes() as $key => $photo):?>
+	<?php foreach($gallery->getPhotos() as $key => $photo):?>
 		<div class="photo_box">
 			<div class="image">
 				<a href="/uploads/<?php echo sfConfig::get('app_photos_folder').'/'.$photo->getFilename()?>">

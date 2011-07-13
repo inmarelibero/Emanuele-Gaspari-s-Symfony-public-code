@@ -44,16 +44,16 @@ class Gallery extends BaseGallery
 	 */
 	public function __toString()
 	{
-		return $this->getTitolo();
+		return $this->getTitle();
 	}
 	
 	/**
 	 * returns the slugged title
 	 */
-	public function getTitoloSlug()
+	public function getTitleSlug()
 	{
 		sfContext::getInstance()->getConfiguration()->loadHelpers('Slugify');
-		return slugify($this->getTitolo());
+		return slugify($this->getTitle());
 	}
 	
 	/**

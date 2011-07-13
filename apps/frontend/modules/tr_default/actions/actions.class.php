@@ -19,7 +19,7 @@ class defaultActions extends sfActions
   {
   	$this->arr_galleries = Doctrine_Core::getTable('Gallery')->createQuery('g')
   													->orderBy('updated_at')
-  													->innerJoin('g.Photoes p')
+  													->innerJoin('g.Photos p')
   													->execute();
   }
   
