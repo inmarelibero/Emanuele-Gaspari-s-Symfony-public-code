@@ -34,7 +34,7 @@ class galleryActions extends sfActions
 			$gallery->addTag($tag_name);
 			$gallery->save();
   	}
-  	exit;
+  	return sfView::NONE;
   }
   
   /**
@@ -52,6 +52,6 @@ class galleryActions extends sfActions
 			$gallery->removeTag($tag_name);
 			$gallery->save();
   	}
-  	exit;
+  	return sfView::NONE;
   }
 }
