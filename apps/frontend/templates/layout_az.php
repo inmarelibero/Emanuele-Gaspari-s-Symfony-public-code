@@ -91,11 +91,9 @@
 						    $("#login_with_facebook").click(function(){
 						    	FB.login(function(response) {
 									  if (response.session) {
-										  //alert('a');
 										  window.location = '<?php echo url_for('user/facebookLogin')?>';
 									  } else {
-										  //alert('b');
-											// user cancelled login
+
 									  }
 									}, {perms:'email'});
 						    });
