@@ -11,6 +11,7 @@ all:
     
   .photos:
     photos_folder: photos
+    max_num_uploaded_photos: 4
   .thumbnails:
     thumbnails_folder: thumbnails
     thumbnails_prefix: "thumb_"
