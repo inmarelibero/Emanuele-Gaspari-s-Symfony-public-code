@@ -28,17 +28,17 @@ class Photo extends BasePhoto
 	 */
 	public function delete(Doctrine_Connection $conn = null)
 	{
-		// deletes the image
+		// delete the image
 		$filename_photo = sfConfig::get('sf_upload_dir').'/'.sfConfig::get('app_photos_folder').'/'.$this->getFilename();
 		if (file_exists($filename_photo))
 			unlink($filename_photo);
 		
-		// deletes the thumbnail
+		// delete the thumbnail
 		$filename_thumbnail = sfConfig::get('sf_upload_dir').'/'.sfConfig::get('app_thumbnails_folder').'/'.sfConfig::get('app_thumbnails_prefix').$this->getFilename();
 		if (file_exists($filename_thumbnail))
 			unlink($filename_thumbnail);
 		
-		// calls parent to delete object
+		// call parent to delete object
 		parent::delete($conn);
 	}
 	

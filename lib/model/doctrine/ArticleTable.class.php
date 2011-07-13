@@ -27,8 +27,10 @@ class ArticleTable extends Doctrine_Table
     	$q = Doctrine_Core::getTable('Article')->createQuery()
     				->where('offers = ?', true)
     				->orderBy('order');
-    						
+
+    	// limit the results if $max is set
 			if ($max) $q->limit($max);
+			
     	return $q->execute();
     }
     
@@ -42,8 +44,10 @@ class ArticleTable extends Doctrine_Table
     	$q = Doctrine_Core::getTable('Article')->createQuery()
     				->where('promotions = ?', true)
     				->orderBy('order');
-    						
+    	
+    	// limit the results if $max is set
 			if ($max) $q->limit($max);
+			
     	return $q->execute();
     }
 }

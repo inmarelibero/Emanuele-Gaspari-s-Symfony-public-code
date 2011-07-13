@@ -17,7 +17,7 @@ class Gallery extends BaseGallery
 	 */
 	public function setUp()
 	{ 
-		parent::setUp ();
+		parent::setUp();
 		$this->actAs('Timestampable');
 		$this->actAs('Taggable');
 	}

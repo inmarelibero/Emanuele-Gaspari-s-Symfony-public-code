@@ -13,7 +13,7 @@
 class Article extends BaseArticle
 {
 	/**
-	 * override of the setUp() method
+	 * overrides of the setUp() method
 	 */
 	public function setUp()
 	{ 
@@ -46,20 +46,16 @@ class Article extends BaseArticle
 	public function hasCrop()
 	{
 		if ($this->getFotoFilename() == '' || $this->isNew())
-		{
 			return false;
-		}
 		
 		if (file_exists(sfConfig::get('sf_upload_dir').'/'.$this->getFotoFilenameCrop()))
-		{
 			return true;
-		}
 		
 		return false;
 	}
 	
 	/**
-	 * prints the image tag with the cropped image
+	 * prints the image tag of the cropped image
 	 */
 	public function getImageTagCrop()
 	{
@@ -119,10 +115,7 @@ class Article extends BaseArticle
 		if (file_exists(sfConfig::get('sf_upload_dir').'/'.$this->getFotoFilename()))
 			unlink($this->getFotoFilename());
 		
-		// call parent to delete object
+		// calls parent to delete object
 		parent::delete($conn);
 	}
-	
-
-	
 }
