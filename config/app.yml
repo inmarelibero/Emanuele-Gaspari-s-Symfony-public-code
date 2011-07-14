@@ -35,3 +35,5 @@ all:
         code: it
         long_name: Italiano
         flag_filename: it.png
+    folder_flag_interface_languages:    # relative to /web/images/
+      flags_iso/24/
