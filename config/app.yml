@@ -24,3 +24,14 @@ all:
     facebook_api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     facebook_api_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     facebook_api_id: xxxxxxxxxxxxxxx
+    
+  .languages:
+    available_interface_languages:
+      en:
+        code: en
+        long_name: English
+        flag_filename: gb.png
+      it:
+        code: it
+        long_name: Italiano
+        flag_filename: it.png
