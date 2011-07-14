@@ -1,7 +1,7 @@
 <?php
 
 /**
- * FileHelper.php
+ * LanguagesHelper.php
  * 
  * functions designed to work with languages, i18n and localization
  */
@@ -25,7 +25,8 @@ function getAvailableLanguages() {
  *							        	 									)
  *													)
  */
-function getLanguageToArray( $language_code = 'en') {
+function getLanguageToArray($language_code = 'en')
+{
 	$arr_languages = getAvailableLanguages();
 	
 	if( array_key_exists($language_code, $arr_languages) )
@@ -41,7 +42,8 @@ function getLanguageToArray( $language_code = 'en') {
  * 
  * @param unknown_type $language_code
  */
-function getFlagFilename( $language_code = 'en' ) {
+function getFlagFilename($language_code = 'en')
+{
 	
 	$arr_available_interface_languages = getAvailableLanguages();
 	
